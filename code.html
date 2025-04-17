@@ -1,149 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Job Board Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-
-<body>
-  <header class="main-header">
+<body class="d-flex flex-column min-vh-100">
+  <!-- Hero Header -->
+  <header class="bg-primary text-white text-center py-5 mb-4 rounded-bottom shadow-lg">
     <div class="container">
-      <h1>Connect to opportunities</h1>
-      <p>Join our platform to explore jobs, grow your network, and hire top talent.</p>
-      <div class="auth-buttons">
-        <a href="#login" class="btn">Login</a>
-        <a href="#register" class="btn btn-primary">Join Now</a>
+      <h1 class="display-4 fw-bold">Connect to Opportunities</h1>
+      <p class="lead mb-4">Explore jobs, grow your network, hire top talent.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#login" class="btn btn-outline-light btn-lg">Login</a>
+        <a href="#register" class="btn btn-light btn-lg text-primary">Join Now</a>
       </div>
     </div>
   </header>
 
-  <nav class="main-nav">
-    <ul class="nav-list">
-      <li><a href="#job-listings">Jobs</a></li>
-      <li><a href="#employer-view">Employers</a></li>
-      <li><a href="#network">Networking</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-    </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">JobBoard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="joblistings.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="companies.html">Companies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#network">Networking</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <main class="content container">
-    <section id="job-listings">
-      <div class="text-content">
-        <h2>Job Listings</h2>
-        <p>Discover open positions from companies around the world.</p>
-        <ul>
-          <li>UI/UX Designer at Bright Inc.</li>
-          <li>Software Engineer at NovaTech</li>
-          <li>Sales Executive at Boldify</li>
-        </ul>
+  <!-- Main Content -->
+  <main class="container flex-grow-1">
+    <div class="row g-4">
+      <!-- Job Listings Card -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0 card-hover">
+          <div class="card-body text-center d-flex flex-column">
+            <div class="mb-3 mx-auto bg-primary bg-opacity-10 rounded-circle p-4">
+              <i class="bi bi-briefcase-fill text-primary fs-1"></i>
+            </div>
+            <h5 class="card-title">Job Listings</h5>
+            <p class="card-text flex-grow-1">Discover open positions from companies around the world.</p>
+            <a href="joblistings.html" class="btn btn-primary mt-3">View Jobs</a>
+          </div>
+        </div>
       </div>
-      <div class="image-content"></div>
-    </section>
-
-    <section id="employer-view">
-      <div class="text-content">
-        <h2>Employer Tools</h2>
-        <p>Post jobs, search for candidates, and manage applications efficiently.</p>
-        <ul>
-          <li>Create Job Postings</li>
-          <li>Access Candidate Database</li>
-          <li>Track Application Status</li>
-        </ul>
+      <!-- Companies Card -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0 card-hover">
+          <div class="card-body text-center d-flex flex-column">
+            <div class="mb-3 mx-auto bg-success bg-opacity-10 rounded-circle p-4">
+              <i class="bi bi-building text-success fs-1"></i>
+            </div>
+            <h5 class="card-title">Explore Companies</h5>
+            <p class="card-text flex-grow-1">Browse profiles of leading companies, their missions, values, and cultures.</p>
+            <a href="companies.html" class="btn btn-success mt-3">View Companies</a>
+          </div>
+        </div>
       </div>
-      <div class="image-content"></div>
-    </section>
-
-    <section id="network">
-      <div class="text-content">
-        <h2>Grow Your Network</h2>
-        <p>Connect with professionals in your industry and grow your career.</p>
-        <ul>
-          <li>Join professional groups</li>
-          <li>Message with connections</li>
-          <li>Follow thought leaders</li>
-        </ul>
+      <!-- Gallery Card -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0 card-hover">
+          <div class="card-body text-center d-flex flex-column">
+            <div class="mb-3 mx-auto bg-info bg-opacity-10 rounded-circle p-4">
+              <i class="bi bi-images text-info fs-1"></i>
+            </div>
+            <h5 class="card-title">Gallery</h5>
+            <p class="card-text flex-grow-1">Explore visuals of our platform in action.</p>
+            <a href="gallery.html" class="btn btn-info mt-3">View Gallery</a>
+          </div>
+        </div>
       </div>
-      <div class="image-content"></div>
-    </section>
-
-    <section id="register">
-      <div class="text-content">
-        <h2>Create an Account</h2>
-        <p>Choose your role and start exploring opportunities:</p>
-        <ol>
-          <li>Job Seeker Registration</li>
-          <li>Employer Registration</li>
-        </ol>
-      </div>
-      <div class="image-content"></div>
-    </section>
-
-    <section id="login">
-      <div class="text-content">
-        <h2>Login</h2>
-        <p>Select your login type:</p>
-        <ol>
-          <li>Job Seeker</li>
-          <li>Employer</li>
-          <li>Admin</li>
-        </ol>
-      </div>
-      <div class="image-content"></div>
-    </section>
-
-    <section id="gallery">
-      <div class="text-content">
-        <h2>Gallery</h2>
-        <p>Explore visuals of our platform in action.</p>
-      </div>
-      <div class="image-content" style="background-image: url('images/job_board.jpg');"></div>
-    </section>
+    </div>
   </main>
 
-  <div class="extended-footer">
-    <div class="footer-column">
-      <h4>About</h4>
-      <ul>
-        <li>Sign Up</li>
-        <li>Help</li>
-        <li>About Us</li>
-        <li>Press</li>
-      </ul>
+  <!-- Footer -->
+  <footer class="bg-light text-muted py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">About</h6>
+          <ul class="list-unstyled">
+            <li>Sign Up</li>
+            <li>Help</li>
+            <li>About Us</li>
+            <li>Press</li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">Opportunities</h6>
+          <ul class="list-unstyled">
+            <li>Learning</li>
+            <li>Jobs</li>
+            <li>Services</li>
+            <li>Mobile App</li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">For Employers</h6>
+          <ul class="list-unstyled">
+            <li>Post a Job</li>
+            <li>Find Talent</li>
+            <li>HR Tools</li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">Categories</h6>
+          <ul class="list-unstyled">
+            <li>Profiles</li>
+            <li>Companies</li>
+            <li>Articles</li>
+            <li>News</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center pt-4 border-top">
+        <small>&copy; 2025 Job Board Platform. All rights reserved.</small>
+      </div>
     </div>
-    <div class="footer-column">
-      <h4>Opportunities</h4>
-      <ul>
-        <li>Learning</li>
-        <li>Jobs</li>
-        <li>Services</li>
-        <li>Mobile App</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>For Employers</h4>
-      <ul>
-        <li>Post a Job</li>
-        <li>Find Talent</li>
-        <li>HR Tools</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Categories</h4>
-      <ul>
-        <li>Profiles</li>
-        <li>Companies</li>
-        <li>Articles</li>
-        <li>News</li>
-      </ul>
-    </div>
-  </div>
-
-  <footer class="main-footer">
-    <p>&copy; 2025 Job Board Platform. All rights reserved.</p>
   </footer>
-</body>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

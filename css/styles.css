@@ -1,286 +1,161 @@
-/* Basic Reset */
-* {
+/* ==============================
+   Custom Styles for Job Board
+   ============================== */
+
+   :root {
+    --color-primary: #0052cc;
+    --color-primary-light: #4c8cff;
+    --color-secondary: #ff5e5e;
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-bg: #f8f9fa;
+    --color-card-bg: #ffffff;
+    --color-text: #343a40;
+    --color-muted: #6c757d;
+  }
+  
+  /* Global Reset & Body */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
   body {
+    background: var(--color-bg);
+    color: var(--color-text);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
-    background: linear-gradient(to bottom, #f5f8fa, #ffffff);
-    color: #2c3e50;
-    padding: 20px;
+    line-height: 1.6;
   }
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  /* Utility Classes */
+  .mt-5 { margin-top: 3rem !important; }
+  .mb-4 { margin-bottom: 1.5rem !important; }
+  .pt-4 { padding-top: 1.5rem !important; }
+  
+  /* Hero Header */
+  header.bg-primary {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    color: #fff;
+    padding: 5rem 1rem 4rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+  header .display-4 {
+    font-weight: 700;
+  }
+  header .lead {
+    font-size: 1.1rem;
+    opacity: 0.9;
   }
   
-  .main-header {
-    background: linear-gradient(135deg, #004182, #0066b2);
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Navbar */
+  .navbar {
+    background: var(--color-card-bg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 1rem;
   }
-  
-  .auth-buttons {
-    margin-top: 25px;
+  .navbar-brand {
+    font-size: 1.4rem;
+    color: var(--color-primary) !important;
   }
-  
-  .btn {
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 6px;
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    transition: all 0.3s ease;
-    margin-right: 12px;
+  .nav-link {
     font-weight: 500;
-  }
-  
-  .btn:hover {
-    background-color: white;
-    color: #004182;
-  }
-  
-  .btn-primary {
-    background-color: white;
-    color: #004182;
-    font-weight: bold;
-  }
-  
-  .btn-primary:hover {
-    background-color: #00356b;
-    color: white;
-  }
-  
-  .main-nav {
-    background-color: #e6f0f8;
-    margin-top: 30px;
-    padding: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .nav-list a {
-    text-decoration: none;
-    color: #004182;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-  
-  .nav-list a:hover {
-    color: #0077cc;
-  }
-  
-  .content section {
-    margin: 50px 0;
-    padding: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    min-height: 280px;
-  }
-  
-  .content section:hover {
-    transform: translateY(-5px);
-  }
-  
-  .content section .text-content {
-    flex: 1 1 400px;
-    padding: 30px;
-    background-color: white;
-  }
-  
-  .content section .image-content {
-    flex: 1 1 300px;
-    background-size: cover;
-    background-position: center;
-    min-height: 280px;
-  }
-  
-  #job-listings .image-content {
-    background-image: url('../images/job-section.jpg');
-  }
-  
-  #employer-view .image-content {
-    background-image: url('../images/employer-section.jpg');
-  }
-  
-  #network .image-content {
-    background-image: url('../images/network-section.jpg');
-  }
-  
-  h1, h2, h3 {
-    margin-bottom: 15px;
-  }
-  
-  p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-  }
-  
-  ul, ol {
-    padding-left: 25px;
-    margin-bottom: 15px;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .main-footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 0.9em;
-    color: #777;
-  }
-  
-  .extended-footer {
-    background-color: #f4f4f4;
-    padding: 50px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 80px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer-column {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .footer-column h4 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    color: #222;
-    border-bottom: 2px solid #004182;
-    display: inline-block;
-    padding-bottom: 4px;
-  }
-  
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-column li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #555;
-    cursor: pointer;
+    color: var(--color-text) !important;
     transition: color 0.2s;
   }
+  .nav-link:hover {
+    color: var(--color-primary) !important;
+  }
   
-  .footer-column li:hover {
-    text-decoration: underline;
-    color: #0077cc;
+  /* Card Styles */
+  .card {
+    background: var(--color-card-bg);
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   }
-
-  .main-header {
-    padding: 30px 15px;
+  .card-body .bi {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
   }
-
-  .auth-buttons {
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    gap: 10px;
+  
+  /* Button Styles */
+  .btn-primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transition: transform 0.2s, background 0.2s;
   }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  .btn-primary:hover {
+    background: var(--color-primary-light);
+    transform: scale(1.05);
   }
-
-  .content section {
-    flex-direction: column;
-    min-height: auto;
+  .btn-success:hover { transform: scale(1.05); }
+  .btn-info:hover    { transform: scale(1.05); }
+  .btn-danger:hover  { transform: scale(1.05); }
+  .btn-warning:hover { transform: scale(1.05); }
+  
+  /* Icon Circle */
+  .bg-opacity-10 {
+    opacity: 0.2 !important;
   }
-
-  .content section .text-content,
-  .content section .image-content {
-    flex: 1 1 100%;
-    min-height: 200px;
+  
+  /* Text & Links */
+  h2, .card-title {
+    color: var(--color-primary);
+    font-weight: 600;
   }
-
-  .footer-column {
-    flex: 1 1 100%;
-    min-width: unset;
+  p, .card-text, .lead {
+    color: var(--color-text);
   }
-
-  .extended-footer {
-    flex-direction: column;
-    gap: 25px;
-    padding: 30px 15px;
+  
+  /* Scroll Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-}
-
-@media (max-width: 1024px) {
-  .nav-list {
-    gap: 20px;
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
   }
-
-  .content section {
-    flex-direction: column;
+  /* Staggered Reveal Delays */
+  .reveal:nth-child(1) { transition-delay: 0.2s; }
+  .reveal:nth-child(2) { transition-delay: 0.4s; }
+  .reveal:nth-child(3) { transition-delay: 0.6s; }
+  .reveal:nth-child(4) { transition-delay: 0.8s; }
+  .reveal:nth-child(5) { transition-delay: 1s; }
+  .reveal:nth-child(6) { transition-delay: 1.2s; }
+  
+  /* Fade-in Utility */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
   }
-
-  .footer-column {
-    flex: 1 1 45%;
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
-
-  .extended-footer {
-    gap: 30px;
+  
+  /* Footer */
+  footer.bg-light {
+    background: var(--color-card-bg) !important;
+    color: var(--color-muted) !important;
+    padding: 3rem 0;
   }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.6rem;
+  footer h6 {
+    color: var(--color-primary);
+    font-weight: 600;
   }
-
-  h2 {
-    font-size: 1.3rem;
+  footer ul li:hover {
+    color: var(--color-primary) !important;
+    cursor: pointer;
   }
-
-  p, li {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .nav-list a {
-    font-size: 1rem;
-  }
-}
+  
